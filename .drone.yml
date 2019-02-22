@@ -1,0 +1,15 @@
+clone:
+  git:
+    image: plugins/git
+    skip_verify: true
+pipeline:
+  build:
+    image: jguyomard/hugo-builder
+    commands:
+      - hugo
+  publish:
+    image: governmentpaas/cf-cli
+    secrets: [ cf_user, cf_password ]
+    commands:
+      - cf login -a https://api.pcf.paclabs.se.lab.emc.com -o paclabs -s production -u $CF_USER -p $CF_PASSWORD --skip-ssl-validation
+      - cf push

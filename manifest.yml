@@ -1,0 +1,8 @@
+---
+applications:
+- name: lab_docs
+  memory: 64MB
+  host: docs
+  domain: apps.paclabs.se.lab.emc.com
+  path: ./public
+  buildpack: staticfile_buildpack

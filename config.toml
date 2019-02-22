@@ -1,0 +1,11 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "hugo-theme-learn"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+themeVariant = "green"
+editURL = "https://gogs.bellevuelab.isus.emc.com/paclabs/lab_docs/_edit/master/content/"
